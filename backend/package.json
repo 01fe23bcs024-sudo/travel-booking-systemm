@@ -1,0 +1,33 @@
+{
+  "name": "travel-booking-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Travel Booking System",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node scripts/seedData.js"
+  },
+  "keywords": ["travel", "booking", "api"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "express-validator": "^7.0.1",
+    "pdfkit": "^0.14.0",
+    "nodemailer": "^6.9.7",
+    "redis": "^4.6.12",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
+
+
