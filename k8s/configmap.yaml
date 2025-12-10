@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: travel-booking-config
-  namespace: travel-booking
-data:
-  FRONTEND_URL: "http://localhost:3000"
-  NODE_ENV: "production"
-  PORT: "5000"
