@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: travel-booking
+data:
+  MONGODB_URI: "mongodb://mongodb:27017/travel_booking"
+  REDIS_URL: "redis://redis:6379"
+  NODE_ENV: "production"
+  PORT: "5000"
