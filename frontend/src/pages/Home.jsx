@@ -10,6 +10,9 @@ const Home = () => {
         <p className="text-xl text-gray-600 mb-8">
           Book your flights and hotels with ease
         </p>
+        <p className="text-sm text-gray-500">
+          Updated: container demo — build 2
+        </p>
         <div className="flex justify-center space-x-4">
           <Link
             to="/flights"

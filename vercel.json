@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "buildCommand": "cd frontend && npm run build",
+  "installCommand": "npm install --legacy-peer-deps",
+  "env": {
+    "MONGODB_URI": "@mongodb_uri",
+    "REDIS_URL": "@redis_url",
+    "JWT_SECRET": "@jwt_secret",
+    "FRONTEND_URL": "@frontend_url",
+    "VITE_API_URL": "@vite_api_url"
+  },
+  "projects": {
+    "backend": {
+      "root": "backend",
+      "alias": "api",
+      "framework": "nodejs",
+      "installCommand": "npm install --legacy-peer-deps",
+      "buildCommand": "",
+      "outputDirectory": ".",
+      "devCommand": "npm run dev",
+      "functions": {
+        "api/**/*.js": {
+          "runtime": "nodejs18.x"
+        }
+      },
+      "rewrites": [
+        {
+          "source": "/api/(.*)",
+          "destination": "http://localhost:5000/$1"
+        }
+      ]
+    },
+    "frontend": {
+      "root": "frontend",
+      "framework": "vite",
+      "installCommand": "npm install --legacy-peer-deps",
+      "buildCommand": "npm run build",
+      "outputDirectory": "dist",
+      "devCommand": "npm run dev"
+    }
+  }
+}
