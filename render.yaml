@@ -1,0 +1,29 @@
+# Render service spec for travel-booking-system
+# - Frontend is deployed as a Static Site (Vite build -> /dist)
+# - Backend is deployed as a Node web service
+
+services:
+  - type: static
+    name: travel-booking-frontend
+    path: frontend
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+
+  - type: web
+    name: travel-booking-backend
+    env: node
+    path: backend
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        value: ""
+        comment: "Set this to your Render managed MongoDB URI or external MongoDB connection string"
+      - key: JWT_SECRET
+        value: ""
+        comment: "Set a strong JWT secret in Render dashboard"
+      - key: REDIS_URL
+        value: ""
+        comment: "If using Redis, provide connection URL (optional)"
